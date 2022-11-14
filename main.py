@@ -124,8 +124,10 @@ def genetic_algo(n):
             child1, child2 = cross1(b[p], b[19-p])
             crossed.append(child1)
             crossed.append(child2)
-        crossed[0] = mut(crossed[random.randint(0, (len(crossed)/2)-1)])
-        crossed[1] = mut(crossed[random.randint((len(crossed)/2), len(crossed)-1)])
+        rand_idx_1 = random.randint(0, (len(crossed)/2)-1)
+        rand_idx_2 = random.randint((len(crossed)/2), len(crossed)-1)
+        crossed[rand_idx_1] = mut(crossed[rand_idx_1])
+        crossed[rand_idx_2] = mut(crossed[rand_idx_2])
         population = population + crossed
     return population
 
